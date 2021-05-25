@@ -18,6 +18,9 @@
                           Nama Barang
                         </th>
                         <th>
+                          Jumlah Barang 
+                        </th>
+                        <th>
                           Tanggal Pinjam
                         </th>
                        <th>
@@ -32,6 +35,18 @@
                       </tr>
                     </thead>
                     <tbody>
+<?php  var_dump($pinjam) ?>
+                      <?php foreach($pinjam as $p): ?>
+
+                        <tr>
+                          <td><?php echo $p['nama'] ?></td>
+                          <td><?php echo $p['barang'] ?></td>
+                          <td><?php echo $p['jumlah'] ?></td>
+                          <td><?php echo $p['tgl_pinjam'] ?></td>
+                          <td><?php echo $p['tgl_kembali'] ?></td>
+                        </tr>
+
+                      <?php endforeach ?>
           
                     </tbody>
                   </table>
