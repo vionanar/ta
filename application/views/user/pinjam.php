@@ -18,10 +18,19 @@
                           Nama Barang
                         </th>
                         <th>
+                          Jumlah Barang
+                        </th>
+                        <th>
                           Tanggal Pinjam
+                        </th>
+                        <th>
+                          Batas Pengembalian
                         </th>
                        <th>
                         Tanggal Kembali
+                      </th>
+                      <th>
+                        Lokasi
                       </th>
                       <th>
                         Kondisi
@@ -29,10 +38,32 @@
                       <th>
                         Status
                       </th>
+                      <th>
+                        Aksi
+                      </th>
                       </tr>
                     </thead>
                     <tbody>
-          
+                      <?php foreach($pinjam as $p): ?>
+                        <tr>
+                          <td><?php echo $p['nama'] ?></td>
+                          <td><?php echo $p['barang'] ?></td>
+                          <td><?php echo $p['jumlah'] ?></td>
+                          <td><?php echo $p['tgl_pinjam'] ?></td>
+                          <td><?php echo $p['batas_kembali'] ?></td>
+                          <td><?php echo $p['tgl_kembali'] ?></td>
+                          <td><?php echo $p['lokasi'] ?></td>
+                          <td><?php echo $p['kondisi'] ?></td>
+                          <td>
+                            <?php if($p['status']==0): ?>
+                              Belum Disetujui
+                            <?php else: ?>
+                              Disetujui
+                            <?php endif ?>
+                          </td>
+
+                        </tr>
+                      <?php endforeach ?>
                     </tbody>
                   </table>
                 </div>
@@ -40,3 +71,4 @@
             </div>
           </div>
         </div>
+      </div>

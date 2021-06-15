@@ -4,9 +4,10 @@ class Daftar_barang extends CI_Controller{
 
 	public function index(){
 
+		$data['title'] = "Daftar Barang";
 		$data['daftar_barang'] = $this->db->get('tb_barang')->result_array();
 
-		$this->load->view('templates_admin/header');
+		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/sidebar');
 		$this->load->view('templates_admin/navbar');
 		$this->load->view('admin/daftar_barang', $data);

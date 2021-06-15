@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" data="blue">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
     -->
@@ -31,7 +31,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<?php echo base_url('user/pengembalian') ?>">
               <i class="fas fa-exchange-alt"></i>
               <p>Pengembalian Sarana</p>
             </a>

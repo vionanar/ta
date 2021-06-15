@@ -1,4 +1,4 @@
-  <div class="main-panel">
+  <div class="main-panel" data="blue">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
         <div class="container-fluid">
@@ -54,7 +54,7 @@
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
                   <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
                   <li class="dropdown-divider"></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
+                  <li class="nav-link"><a href="<?= base_url('auth/login/logout'); ?>">Log out</a></li>
                 </ul>
               </li>
               <li class="separator d-lg-none"></li>

@@ -68,7 +68,6 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="<?php echo base_url() ?>assets/js/core/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/core/popper.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/core/bootstrap.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -87,6 +86,9 @@
   <script type="text/javascript">
     $(document).ready(function() {
     $('.select-barang').select2();
+});
+    $(document).ready(function() {
+    $('.select-lokasi').select2();
 });
   </script>
 </body>

@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" data="blue">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
     -->
@@ -29,9 +29,15 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="<?php echo base_url('admin/mutasi') ?>">
               <i class="fas fa-history"></i>
               <p>Mutasi</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo base_url('admin/inventaris') ?>">
+              <i class=""></i>
+              <p>Inventaris</p>
             </a>
           </li>
           <li>
@@ -53,9 +59,9 @@
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="fas fa-user-plus"></i>
-              <p>Tambahkan User</p>
+            <a href="<?php echo base_url('admin/registrasi') ?>">
+              <i class="fas fa-users"></i>
+              <p>Data Pengguna</p>
             </a>
           </li>
           </li>

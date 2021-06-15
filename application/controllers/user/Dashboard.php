@@ -13,14 +13,14 @@ class Dashboard extends CI_Controller{
 	public function index()
 	{
 
-		$data['title'] = "Dashboard Admin";
+		$data['title'] = "Dashboard Peminjam";
 		$data['username'] = $this->session->userdata('username');
 
-		$this->load->view('templates_admin/header', $data);
-		$this->load->view('templates_admin/sidebar');
-		$this->load->view('templates_admin/navbar');
-		$this->load->view('admin/dashboard', $data);
-		$this->load->view('templates_admin/footer');
+		$this->load->view('templates_user/header', $data);
+		$this->load->view('templates_user/sidebar');
+		$this->load->view('templates_user/navbar');
+		$this->load->view('user/dashboard', $data);
+		$this->load->view('templates_user/footer');
 
 	}
 }

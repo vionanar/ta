@@ -4,7 +4,7 @@
             <div class="card ">
               <div class="card-header">
                 <h3>Data Sarana </h3>
-               <button class="btn btn-primary" data-toggle="modal" data-target=#modal>Tambahkan Sarana</button>
+               <a href="<?php echo base_url('admin/sarana/tambah_sarana') ?>" class="btn btn-primary">Tambahkan Sarana</a>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -14,9 +14,6 @@
                       <tr>
                         <th>
                           Nama Sarana
-                        </th>
-                        <th>
-                          Kelompok
                         </th>
                         <th>
                           Keterangan
@@ -41,14 +38,13 @@
                       foreach($sarana as $s): ?>
                       <tr>
                         <td><?php echo $s['nama_sarana'] ?></td>
-                        <td><?php echo $s['kelompok_srn'] ?></td>
                         <td><?php echo $s['keterangan'] ?></td>
                         <td><?php echo $s['ruangan'] ?></td>
                         <td><?php echo $s['no_inventaris'] ?></td>
                         <td><?php echo $s['jumlah'] ?> </td>
                         <td><?php echo $s['kelayakan'] ?></td>
                         <td>
-                          <a href="" class="btn btn-primary btn-link" data-toggle="modal" data-target=#modal_edit data-id="<?= $s['id_sarana'] ?>" data-nama_sarana="<?= $s['nama_sarana']?>" data-kelompok_srn="<?= $s['kelompok_srn'] ?>"  data-keterangan="<?= $s['keterangan'] ?>" data-ruangan="<?= $s['ruangan']?>"data-no_inventaris="<?= $s['no_inventaris'] ?>"  data-jumlah="<?= $s['jumlah'] ?>" data-kelayakan="<?= $s['kelayakan']?>" onclick="tampilkanDataEdit(this)"><i class="fas fa-edit"></i></a>
+                          <a href="" class="btn btn-primary btn-link" data-toggle="modal" data-target=#modal_edit data-id="<?= $s['id_sarana'] ?>" data-nama_sarana="<?= $s['nama_sarana']?>"  data-keterangan="<?= $s['keterangan'] ?>" data-ruangan="<?= $s['ruangan']?>"data-no_inventaris="<?= $s['no_inventaris'] ?>"  data-jumlah="<?= $s['jumlah'] ?>" data-kelayakan="<?= $s['kelayakan']?>" onclick="tampilkanDataEdit(this)"><i class="fas fa-edit"></i></a>
                           <a href="<?php echo base_url('admin/sarana/hapus/'). $s['id_sarana'] ?>" class="btn btn-danger btn-link" onclick="return confirm('apakah anda yakin?')"><i class="fas fa-trash"></i></a>
                         </td>
                       </tr>
@@ -59,75 +55,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="modal" id="modal" tabindex="-1" role="dialog" >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Sarana</h5>
-            </div>
-            <form action="<?php echo base_url(). 'admin/sarana/tambah_sarana' ?>" method="post">
-
-            <div class="modal-body">
-
-               <div class="form-group">
-                <label>Nama Sarana</label>
-                <input type="text" name="nama_sarana" class="form-control" required="">
-              </div>
-
-              <div class="form-group">
-                <label>Kelompok Sarana</label>
-                <select class="form-control" name="kelompok_srn">
-                  <option value="">Pilih</option>
-                  <option value="komputer">Komputer</option>
-                  <option value="atk">ATK</option>
-                  <option value="mejakursi">Meja dan Kursi</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label>Keterangan</label>
-                <input type="text" name="keterangan" class="form-control" required>   
-              </div>
-
-              <div class="form-group">
-                <label>Ruangan</label>
-                <select class="form-control" name="ruangan">
-                  <option value="">Pilih</option>
-                  <option value="Kelas XI">Kelas XI</option>
-                  <option value="Kelas XII">Kelas XII</option>
-                </select>
-              </div>
-
-               <div class="form-group">
-                <label>No Inventaris/Sarana</label>
-                <input type="text" name="no_inventaris" class="form-control" required>   
-              </div>
-
-              <div class="form-group">
-                <label>Jumlah</label>
-                <input type="text" name="jumlah" class="form-control" required>   
-              </div>
-
-               <div class="form-group">
-                <label>Kelayakan</label>
-                <select class="form-control" name="kelayakan">
-                  <option value="">Pilih</option>
-                  <option value="layak">Layak</option>
-                  <option value="tidak_layak">Tidak Layak</option>
-                </select>
-              </div>
-              
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
-              <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-            </form>
-          </div>
-        </div>
-        </div>
-
          <div class="modal" id="modal_edit" tabindex="-1" role="dialog" >
         <div class="modal-dialog">
           <div class="modal-content">

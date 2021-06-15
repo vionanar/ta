@@ -2,13 +2,12 @@
 
 class Login extends CI_Controller{
 
-	function __construct(){
-		parent::__construct();
-		$this->load->library('session');
-	}
-
 	public function index()
 	{
+				// jika ada username di session maka diarahkan ke dashboard
+		if ($this->session->userdata('username')) {
+			redirect();
+		}
 		$this->load->view('auth/login');
 	}
 
@@ -26,7 +25,12 @@ class Login extends CI_Controller{
 			}else{
 				$data = ['username' => $user['username']];
 				$this->session->set_userdata($data);
-				redirect();
+
+				if($user['role_id'] == 2 || $user['role_id'] == 3){
+					redirect('user/Dashboard');
+				}else{
+					redirect();					
+				}
 			}
 		}else{
 			redirect('auth/login');
@@ -36,7 +40,7 @@ class Login extends CI_Controller{
 	public function logout()
 	{
 		$this->session->unset_userdata('username');
-		redirect('auth/login/masuk');
+		redirect('auth/login');
 	}
 }
  ?>

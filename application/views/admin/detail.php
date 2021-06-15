@@ -4,7 +4,7 @@
             <div class="card ">
               <div class="card-header">
                 <h3>Daftar Barang</h3>
-               <button class="btn btn-primary" data-toggle="modal" data-target=#modal>Kembali</button>
+               <a href="<?php echo base_url('admin/prasarana/index') ?>" class="btn btn-primary">Kembali</a>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

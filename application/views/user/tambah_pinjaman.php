@@ -9,14 +9,19 @@
                   <?php echo $this->session->flashdata('pesan') ?>
             	 		<form method="post" action="<?php echo base_url('user/pinjam/insert') ?>">
 
+                <div class="form-group col-md-6">
+                  <label>Nama Peminjam</label>
+                  <input type="text" class="form-control" name="nama" value=" <?php echo $nama ?>" readonly>
+                 
+                </div>
+
               	<div class="form-group col-md-6">
               		<label>Nama Barang</label>
               		<select class="form-control select-barang" name="barang">
-              			<option>pilih barang</option>
-              			<option value="barang1">barang1</option>
-              			<option value="barang2">barang2</option>
-              			<option value="barang3">barang3</option>
-              			<option value="barang4">barang4</option>
+              			<option>Pilih Barang</option>
+                    <?php foreach ($barang as $b) : ?>
+              			<option value="<?php echo $b['nama_barang'] ?>"><?php echo $b['nama_barang'] ?></option>
+                  <?php endforeach ?>
               		</select>
               	</div>
 
@@ -30,10 +35,18 @@
               		<input type="date" name="tgl_pinjam" class="form-control">
               	</div>
 
-              	<div class="form-group col-md-12">
-              		<label>Tanggal Kembali</label>
-              		<input type="date" name="tgl_kembali" class="form-control">
-              	</div> 
+                <div class="form-group col-md-6">
+                  <label>Lokasi</label>
+                  <select class="form-control select-lokasi" name="lokasi">
+                    <option>Pilih Lokasi</option>
+                    <option value="luar ruangan">Luar Ruangan</option>
+                    <?php foreach ($lokasi as $l) : ?>
+                    <option value="<?php echo $l['ruangan'] ?>"><?php echo $l['ruangan'] ?></option>
+
+                    <?php endforeach ?>
+                    
+                  </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Lanjutkan Pinjaman</button>
 
               </form>
